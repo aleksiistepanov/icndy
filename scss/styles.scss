@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap');
+
+@import 'normalize';
+@import 'variables';
+@import 'mixins';
+@import 'socials';
+@import 'slider';
+@import 'animate';
+@import 'loader';
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-size: 10px; 
+}
+
+body {
+    min-height: 100%;
+    @include font(1.6rem, $text-color, 500, $text-ff, 1.8);
+    overflow-x: hidden;;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 45px 0;
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, 125px);
+    gap: 30px;
+    &--c4 {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 350px);
+        gap: 0;
+    }
+    &__item {
+        // background-color: orange;
+        grid-row: span 2;
+        &--2w {
+            grid-column: span 2;
+        }
+        &--2h {
+            grid-row: span 4;
+        }
+        &--1-5h {
+            grid-row: span 3;
+        }
+    }
+}
+
+.poster {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    &__img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);  
+        min-width: 100%;
+        min-height: 100%;
+        .poster--dark & {
+            opacity: .3;
+        }
+    }
+    &--dark {
+        background-color: #000;
+    }
+
+}
+
+
